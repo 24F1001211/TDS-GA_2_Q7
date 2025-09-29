@@ -1,14 +1,6 @@
-name: Cache Dependencies Example
-
-on:
-  push:
-    branches:
-      - main  # or your default branch
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -17,7 +9,7 @@ jobs:
         id: cache-step
         uses: actions/cache@v4
         with:
-          path: node_modules   # change if your dependencies folder is different
+          path: node_modules
           key: cache-63b237d
 
       - name: Show cache result
